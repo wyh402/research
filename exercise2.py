@@ -9,6 +9,7 @@ class Error:
     def __init__(self, keyword):
         self.keyword = keyword
         self.dict = collections.defaultdict(int)
+        self.totalError = 1
 
 #initialize map dicitonary with keyword-department pair
 def fillDict():
@@ -52,6 +53,7 @@ def updateList(key, dep):
                 e.dict[dep] += 1
             else:
                 e.dict[dep] = 1
+            e.totalError += 1
             return
     
     err = Error(key)
